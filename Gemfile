@@ -4,7 +4,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: [:production]
 gem 'thin', group: [:production]
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.1.3"
 gem 'devise'
 gem 'cancan'
 gem 'devise_invitable'
