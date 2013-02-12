@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'humane-rails'
 gem 'will_paginate'
 gem 'inherited_resources'
+gem 'json', '~> 1.7.7'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
