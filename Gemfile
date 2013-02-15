@@ -33,7 +33,7 @@ group :assets do
   gem 'zurb-foundation'
 end
 
-group :development do 
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'

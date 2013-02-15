@@ -1,8 +1,6 @@
 class Group < ActiveRecord::Base
-  attr_accessible :name, :location
+  attr_accessible :description, :link, :name, :applicant_id
 
-  has_many :users
+  belongs_to :applicant
 
-  validates_presence_of :name, :location
-  validates_uniqueness_of :name
 end
