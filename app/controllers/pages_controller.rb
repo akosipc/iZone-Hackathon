@@ -16,7 +16,10 @@ class PagesController < ApplicationController
   end
 
   def filter
-    @applicants = nil
+    @applicants = []
+    User.applicants.each do |applicant|
+      @applicants << applicant if applicant.full_name.downcase.include? params[:applicant].downcase
+    end
     render 'search'
   end
 end

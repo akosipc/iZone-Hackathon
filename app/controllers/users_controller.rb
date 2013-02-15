@@ -27,11 +27,13 @@ class UsersController < ApplicationController
     @graph = Koala::Facebook::GraphAPI.new(@user.access_token)
     
     #mutual friends (change this to reflect HR Groups username)
-    #@friends =  @graph.get_connections("me", "mutualfriends/"+current_user.username+"?fields=name,email,username,picture")
-    @friends =  @graph.get_connections("me", "mutualfriends/godstrikerharvey?fields=name,email,username,picture")
+    @friends =  @graph.get_connections("me", "mutualfriends/"+current_user.username+"?fields=name,email,username,picture")
+    #@friends =  @graph.get_connections("me", "mutualfriends/godstrikerharvey?fields=name,email,username,picture")
      
     @friends.each do |friend|
-      @user.mutual_friends.create!(email: friend["email"], name: friend["name"], username: friend["username"], picture: friend["picture"]["data"]["url"])
+      unless @user.mutual_friends.collect(&:username).include? friend["username"]
+        @user.mutual_friends.create!(email: friend["email"], name: friend["name"], username: friend["username"], picture: friend["picture"]["data"]["url"])
+      end
     end
   end
   

@@ -140,3 +140,18 @@
 #socialResume:hover{
 	opacity: 0.7;
 }
+
+.panel {
+  -webkit-border-radius: 20px 0px 20px 0px;
+  -moz-border-radius: 20px 0px 20px 0px;
+  border-radius: 20px 0px 20px 0px;
+
+  border-right: 3px solid #ACACAC;
+  border-bottom: 3px solid #ACACAC;
+
+  &:hover {
+    -webkit-box-shadow: 0px 1px 2px 2px #56FAFA;
+    -moz-box-shadow: 0px 1px 2px 2px #56FAFA;
+    box-shadow: 0px 1px 2px 2px #56FAFA;
+  }
+}
