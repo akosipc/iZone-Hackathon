@@ -10,3 +10,30 @@
           %li
             %a{:href => "javascript:UserVoice.showPopupWidget();"} Feedback
           %li= link_to "About Us", about_path
+
+
+:javascript
+  
+  $('#footer .row ul li:first').hover(function() {
+    $(this).addClass("footer-buttons");
+    }, function() {
+    $(this).removeClass("footer-buttons");
+  });
+
+  $('#footer .row ul li:nth(1)').hover(function() {
+    $(this).addClass("footer-buttons");
+    }, function() {
+    $(this).removeClass("footer-buttons");
+  });
+
+  $('#footer .row ul li:nth(2)').hover(function() {
+    $(this).addClass("footer-buttons");
+    }, function() {
+    $(this).removeClass("footer-buttons");
+  });
+
+  $('#footer .row ul li:last').hover(function() {
+    $(this).addClass("footer-buttons");
+    }, function() {
+    $(this).removeClass("footer-buttons");
+  });
