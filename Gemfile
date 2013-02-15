@@ -31,6 +31,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'zurb-foundation'
+  gem 'foundation-icons-rails'
 end
 
 group :development do

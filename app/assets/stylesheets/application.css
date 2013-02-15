@@ -10,13 +10,14 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require foundation-icons
  *= require jackedup
  *= require_tree .
  */
 
-
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif !important;
+  letter-spacing: 1px;
 }
 
 h1,h2,h3,h4,h5,h6 {

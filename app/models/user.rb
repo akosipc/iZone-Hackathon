@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :mutual_friends
   has_many :works
+  scope :applicants, where(role: 'Applicant')
 
   belongs_to :group
 
