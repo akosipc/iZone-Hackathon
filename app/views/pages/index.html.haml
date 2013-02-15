@@ -1,2 +1,15 @@
 - provide :title, "Home"
-
+.v-spacer60
+.centerify
+  .social-resume
+    = "Social"
+    .inline.resume-span
+      = "Resumé"
+  %h4.subheader= "Lorem ipsum sit amet dolor consecitur"
+  = image_tag('facebook-button.png')
+  .centerify.separator
+= render 'features'
+= render 'about'
+.pricing-wrapper
+  = render 'pricing'
+.v-spacer150

@@ -32,7 +32,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       batch_api.get_connections("me","likes?fields=category,link,name")
 
       #user posts
-      batch_api.get_connections("me","photos?fields=source&limit=5")
+      batch_api.get_connections("me","photos?fields=source&limit=4")
 
       #user groups
       batch_api.get_connections("me","groups?fields=description,name,link,bookmark_order")

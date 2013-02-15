@@ -21,7 +21,7 @@
 
 .centerify {
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto;  
 }
 
 #pricing {
@@ -79,7 +79,7 @@
     border-bottom: 4px solid rgba(144, 200, 200, 1);
     border-right: 4px solid rgba(144, 200, 200, 1);
     padding: 40px 10px;
-
+    top: -10px;
     -webkit-border-radius: 20px 0px 20px 0px;
     -moz-border-radius: 20px 0px 20px 0px;
     border-radius: 20px 0px 20px 0px;
@@ -143,7 +143,63 @@
 }//id search
 
 #socialResume:hover{
+	opacity: 0.8;
+}
+
+.footer-buttons{
+    text-align: center;
+    text-decoration: underline;	
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
 	opacity: 0.7;
+}
+
+.inline{
+	display: inline;
+}
+
+.emboss {
+   text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.8), /* shadow */
+      0 -1px 0 rgba(255, 255, 255, 1.0); /* highlight */ 
+  }
+
+.impress {
+   text-shadow:
+      0 -1px 0 rgba(0, 0, 0, 0.8), /* shadow */
+      0 1px 0 rgba(255, 255, 255, 0.5); /* highlight */ 
+  }
+
+.separator{
+  width:60%;
+  height:10px;
+  border-top: 5px dotted rgba(255,255,255,0.3);
+}
+
+.vertical-sep{
+  background: url('separator.png');
+  position: relative;
+}
+
+#header-slide {
+    position: fixed;
+    top:-50px;
+    width: 100%;
+    background: black;
+}
+
+#header-content {
+    width: 900px;
+    height: 50px;
+    margin: 0 auto;
+    color: white;
+}
+
+.top-bar.fixed{
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
 }
 
 .panel {
