@@ -3,12 +3,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
-      if request.referrer.eql? root_url
+      if @user.is_applicant?
+        redirect_to thank_you_path, notice: 'Thank you for submitting your data!'
+      elsif request.referrer.present?
         sign_in_and_redirect @user, :event => :authentication
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else
         @user.set_to_applicant!
-        redirect_to thank_you_path, notice: 'Thank you for submitting your data'
+        redirect_to thank_you_path, notice: 'Thank you for submitting your data!'
       end
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
