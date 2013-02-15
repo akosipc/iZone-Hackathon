@@ -15,7 +15,7 @@
 
     %ul.right
       - if user_signed_in?
-        %li{class: "#{active_page?('invitations')}"}= link_to "Invitations", invites_path
+        %li{class: "#{active_page?('invitations')}"}= link_to "Applications", invites_path
         %li{class: "#{active_page?}"}= link_to "Search", root_path
         %li{class: "#{active_page?('analytics')}"}= link_to "Analytics", analytics_path
         %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
