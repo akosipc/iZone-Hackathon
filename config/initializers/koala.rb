@@ -14,4 +14,6 @@ module Facebook
       end
     end
   end
+
+  alias_method_chain :initialize, :default_settings
 end
