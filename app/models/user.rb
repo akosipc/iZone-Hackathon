@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
-                  :gender, :username, :avatar_path, :provider, :uid, :role, :group_id
+                  :gender, :username, :avatar_path, :provider, :uid, :role, :group_id, :access_token
 
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     self.update_attributes(:role => 'Admin')
   end
 
+  def set_to_applicant!
+    self.update_attributes(:role => 'Applicant')
+  end
+
   def has_a_group?
     self.group.present?
   end
@@ -46,6 +50,7 @@ class User < ActiveRecord::Base
                       gender:        auth.extra.raw_info.gender.capitalize!,
                       username:      auth.info.nickname,
                       avatar_path:   auth.info.image.gsub('type=square','width=400&height=400'),
+                      access_token:  auth['credentials']['token'],
                       role:          'User')
       user.save
     end
