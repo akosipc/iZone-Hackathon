@@ -3,10 +3,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
-                  :gender, :username, :avatar_path, :provider, :uid, :role
+                  :gender, :username, :avatar_path, :provider, :uid, :role, :group_id
 
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
+
+  belongs_to :group
 
   def full_name
     "#{self.first_name} #{self.last_name}"
@@ -26,6 +28,10 @@ class User < ActiveRecord::Base
 
   def promote!
     self.update_attributes(:role => 'Admin')
+  end
+
+  def has_a_group?
+    self.group.present?
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
