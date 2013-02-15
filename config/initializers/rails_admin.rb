@@ -3,11 +3,11 @@
 
 RailsAdmin.config do |config|
 
-
+  config.authorize_with :cancan
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['I Zone Hackathon', 'Admin']
+  config.main_app_name = ['', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 

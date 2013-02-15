@@ -3,4 +3,5 @@
     humane.log("#{notice}")
 - if alert.present?
   :javascript
+    humane.error = humane.spawn({ addnCls: 'humane-jackedup-error' })
     humane.error("#{alert}")

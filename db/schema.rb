@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130206101247) do
     t.string   "username"
     t.string   "provider"
     t.string   "uid"
+    t.string   "role"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

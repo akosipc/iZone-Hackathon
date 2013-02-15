@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
-                  :gender, :username, :avatar_path, :provider, :uid
+                  :gender, :username, :avatar_path, :provider, :uid, :role
 
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
@@ -13,12 +13,20 @@ class User < ActiveRecord::Base
     return "#{self.first_name} #{self.last_name}"
   end
 
+  def role?
+    self.role
+  end
+
   def is_admin?
     true if self.role? == "Admin"
   end
 
   def is_user?
     true if self.role? == "User"
+  end
+
+  def promote!
+    self.update_attributes(:role => 'Admin')
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
