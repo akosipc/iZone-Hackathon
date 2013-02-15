@@ -1,11 +1,35 @@
 .wrapper-heading{
-  background: rgba(102, 255, 235, 1);
+  background: rgba(2, 40, 89, 1);
+  border-top: 30px solid transparent;
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
+}
+
+.lining{
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
 }
 
 .wrapper-search{
-  background: rgba(168, 240, 48, 1);
+  background: rgba(53, 135, 242, 1);
 }
 
 .wrapper-featured{
-  background: rgba(217, 0, 65, 1);
+  background: rgba(215, 230, 233, 1);
+}
+
+.wrapper-footer{
+  background: rgba(242, 192, 43, 1);  
+}
+
+.top-bar{
+  background: #222222;
+  min-height: 50px;
+  line-height: 30px;
+  margin: 0 0 0 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
 }
