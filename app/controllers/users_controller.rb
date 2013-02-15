@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  
+  before_filter :authenticate_user!,:except => [:applicant]
   inherit_resources
 
   def show
@@ -7,6 +8,8 @@ class UsersController < ApplicationController
     if @user.eql? current_user
       redirect_to profile_path
     end
+    @gago = pull_facebook_data(@user)
+
   end
 
   def edit

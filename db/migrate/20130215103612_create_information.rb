@@ -9,7 +9,7 @@ class CreateInformation < ActiveRecord::Migration
       t.string :relationship_status
       t.string :address
       t.string :contact_no
-      t.integer :applicant_id
+      t.integer :user_id
       t.timestamps
     end
   end

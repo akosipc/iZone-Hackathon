@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :place, :time, :applicant_id
+  attr_accessible :name, :place, :time, :user_id
   
-  belongs_to :applicant
+  belongs_to :user
 end

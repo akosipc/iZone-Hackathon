@@ -10,10 +10,10 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require foundation-icons
  *= require jackedup
  *= require_tree .
  */
-
 
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif !important;

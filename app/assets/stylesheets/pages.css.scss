@@ -32,6 +32,38 @@
     font-size: 48px;
   }//element h2
 
+}//id pricing
+
+#features {
+  margin: 40px 0px;
+
+  h2 {
+    text-shadow: 0px 1px #444;
+    font-size: 48px;
+    margin: 10px;
+  }//element h2
+
+  .twelve {
+
+    background: rgba(186, 234, 234, 0.8);
+    border-bottom: 4px solid rgba(144, 200, 200, 1);
+    border-right: 4px solid rgba(144, 200, 200, 1);
+    padding: 40px 10px;
+
+    -webkit-border-radius: 20px 0px 20px 0px;
+    -moz-border-radius: 20px 0px 20px 0px;
+    border-radius: 20px 0px 20px 0px;
+
+  }
+
+  .glyph {
+    font-size: 100px;
+    position: relative;
+    left: 31%;
+    top: -50px;
+    opacity: 0.6;
+  }
+
 }//id features
 
 #search {

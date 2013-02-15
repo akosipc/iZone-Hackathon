@@ -4,7 +4,7 @@ class CreateLikes < ActiveRecord::Migration
       t.string :name
       t.string :link
       t.string :category
-      t.integer :applicant_id
+      t.integer :user_id
       t.timestamps
     end
   end
