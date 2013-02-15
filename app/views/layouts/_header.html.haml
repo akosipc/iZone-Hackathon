@@ -1,29 +1,7 @@
 %nav.top-bar.fixed
   %ul
     %li.name
-      %h1 
-        =link_to "Social Survey", "#"
-    %li.toggle-topbar
-      =link_to "#"
-
-  %section
-    %ul.left
-      %li
-        =link_to "Link","#"
-
-    %ul.right
-      %li.has-dropdown
-        =link_to "Link", "#"
-
-        %ul.dropdown
-          %li
-            =link_to "Dropdown Link","#"
-          %li
-            =link_to "Dropdown Link","#"
-          %li
-            =link_to "Dropdown Link","#"
-      %h1= link_to "Social Resume", root_path
-    %li.divider
+      %h1=link_to "SocialResume", root_path
 
   %section
     %ul.left
@@ -40,4 +18,3 @@
       - else 
         %li.divider
         %li= link_to "Sign-in via Facebook", user_omniauth_authorize_path(:facebook)
->>>>>>> 080e3e1e5c1247004bd2a01857029ed0b7e042da
