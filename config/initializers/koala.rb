@@ -2,6 +2,7 @@ module Facebook
   CONFIG = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]
   APP_ID = CONFIG['app_id']
   SECRET = CONFIG['secret_key']
+end
 
   Koala::Facebook::OAuth.class_eval do
     def initialize_with_default_settings(*args)
@@ -13,7 +14,6 @@ module Facebook
           initialize_without_default_settings(*args)
       end
     end
+    alias_method_chain :initialize, :default_settings
   end
 
-  alias_method_chain :initialize, :default_settings
-end
