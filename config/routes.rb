@@ -9,6 +9,7 @@ IZoneHackathon::Application.routes.draw do
     delete 'users/sign_out' => 'devise/sessions#destroy', :as => 'destroy_user_session'
   end
 
+  #pages controller
   authenticated do
     root to: 'pages#search'
   end
@@ -20,6 +21,10 @@ IZoneHackathon::Application.routes.draw do
   match '/thank_you' => 'pages#thank_you', as: :thank_you, via: :get
   match '/filter' => 'pages#filter', as: :filter, via: :post
 
+  #users controller
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get
+
+  #analytics controller
+  resources :analytics, only: ['index']
 end
