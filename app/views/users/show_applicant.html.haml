@@ -1,0 +1,75 @@
+- provide :title, "Showing data for #{@user.full_name}"
+%hr
+
+%h1
+  = @user.first_name
+  = @user.last_name
+
+- @user.informations.each do |information|
+  %p
+    = information.address
+    = information.birthday
+    = information.email
+    = information.gender
+    = information.relationship_status
+
+- if @user.images.present?
+  .row
+    .twelve.columns
+      - @user.images.each do |image|
+        .three.mobile-two.columns
+          = image_tag image.link
+          .panel
+            %p Sample Images
+      .clearfix
+
+- if @user.events.present?
+  .row
+    .twelve.columns
+      - @user.events.each do |event|
+        .two.columns.mobile-one
+          %h3 event.name
+        .five.columns
+          %p event.place
+        .five.columns
+          %p event.time
+
+-if @user.mutual_friends.present?
+  .row
+    .twelve.columns
+      %h2 Mutual Friends
+      - @user.mutual_friends.each do |friend|
+        .three.columns.panel
+          =image_tag friend.picture
+          %h3 
+            =friend.name
+          %p
+            =friend.name
+            =friend.username
+            = link_to "Inquire about applicant", "#", class: "small button"
+
+-if @user.groups.present?
+  .row
+    .twelve.columns
+      %h2 Groups
+      - @user.groups.each do |group|
+        .twelve.columns.panel
+          %h3
+            =group.name
+          %p
+            = group.description
+            Frequency of use
+            = group.bookmard_order
+          = link_to "Checkout Group", group.link, class: "small button"
+  
+-if @user.likes.present?
+  .row
+    .twelve.columns
+      %h2 Likes
+      - @user.likes.each do |like|
+        .twelve.columns.panel
+          %h3
+            =like.name
+          %p
+            = like.category
+          = link_to "Checkout Like", like.link, class: "small button"
