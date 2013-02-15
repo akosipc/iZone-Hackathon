@@ -17,7 +17,9 @@ class User < ActiveRecord::Base
   has_many :mutual_friends
   has_many :works
   scope :applicants, where(role: 'Applicant')
-
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
   belongs_to :group
 
   def full_name
@@ -27,7 +29,7 @@ class User < ActiveRecord::Base
   def role?
     self.role
   end
-
+  
   def is_admin?
     true if self.role? == "Admin"
   end
