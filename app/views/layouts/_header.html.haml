@@ -9,9 +9,9 @@
     %ul.left
       - if user_signed_in?
       - else
-        %li{class: "#{active_page?('features')}"}= link_to "Features", features_path
-        %li{class: "#{active_page?('pricing')}"}= link_to "Pricing", pricing_path
-        %li{class: "#{active_page?('about')}"}= link_to "About Us", about_path
+        %li= link_to "Features", '#'
+        %li= link_to "Pricing", '#'
+        %li= link_to "About Us", '#'
 
     %ul.right
       - if user_signed_in?
@@ -21,7 +21,8 @@
         %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
         %li.divider
         %li= link_to "Log Out!", destroy_user_session_path, method: :delete
-      - else 
+      - else
+        %li{:style => "pointer-events: none; padding-right: 5px; color: white;"}= "Already have an account?"
         %li.divider
-        %li= link_to "Sign-in via Facebook", user_omniauth_authorize_path(:facebook)
+        %li= link_to "Login", user_omniauth_authorize_path(:facebook)
 
