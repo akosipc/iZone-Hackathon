@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
                   :gender, :username, :avatar_path, :provider, :uid, :role
 
@@ -10,7 +9,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   def full_name
-    return "#{self.first_name} #{self.last_name}"
+    "#{self.first_name} #{self.last_name}"
   end
 
   def role?
