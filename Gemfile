@@ -23,6 +23,7 @@ gem 'json', '~> 1.7.7'
 gem 'google-webfonts'
 gem 'devise_invitable'
 gem 'psych'
+gem 'koala'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
