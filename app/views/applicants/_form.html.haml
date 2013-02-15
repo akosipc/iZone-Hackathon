@@ -1,0 +1,10 @@
+.row
+  .twelve.columns
+    = form_for @applicant do |f|
+      = f.label "Name:"
+      = f.text_field :name, :placeholder => "Full name"
+      = f.label "Email:"
+      = f.text_field :email, :placeholder => "Facebook email"
+      = f.label "Username:"
+      = f.text_field :facebook_username, :placeholder => "Facebook Username"
+      = f.submit "Submit", :class => "button"
