@@ -106,6 +106,7 @@
  
   .half-column {
     width: 720px;
+    max-width: 90%;
   }  
   
   form {
@@ -159,3 +160,5 @@
     box-shadow: 0px 1px 2px 2px #56FAFA;
   }
 }
+
+.clearfix { clear: both; }
