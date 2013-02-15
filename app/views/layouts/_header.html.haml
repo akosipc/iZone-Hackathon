@@ -29,12 +29,12 @@
     %ul.left
       - if user_signed_in?
       - else
-        %li=link_to "Features and Pricing", "#"
-        %li=link_to "About Us", "#"
+        %li=link_to "Features and Pricing", features_path
+        %li=link_to "About Us", about_path
 
     %ul.right
       - if user_signed_in?
-        %li= link_to "Profile", "#"
+        %li= link_to "Profile", profile_path
         %li.divider
         %li= link_to "Log Out!", destroy_user_session_path, method: :delete
       - else 
