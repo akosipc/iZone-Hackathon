@@ -1,6 +1,7 @@
 .wrapper-footer{
   background: url('paper_fibers.png') 0 0 repeat;
   border-top: 1px solid rgba(132, 132, 132, 0.6);
+  height: 50px;
 }
 
 
@@ -13,13 +14,28 @@ body{
   background: -ms-linear-gradient(top, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
   background: linear-gradient(to bottom, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e69de', endColorstr='#d7e6e9',GradientType=0 );
+  height: 100%;
 }
 
 .top-bar{
   background: #222222;
-  line-height: 30px;
   margin: 0 0 0 0;
   padding: 0;
-  width: 100%;
   position: relative;
+  opacity: 0.9;
+}
+
+
+#container {
+min-height: 100%;
+position: relative;
+}
+
+#footer {
+height: 20px;
+position: relative;
+}
+
+.clearfooter {
+clear: both;
 }
