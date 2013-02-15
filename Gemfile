@@ -20,6 +20,9 @@ gem 'humane-rails'
 gem 'will_paginate'
 gem 'inherited_resources'
 gem 'json', '~> 1.7.7'
+gem 'google-webfonts'
+gem 'devise_invitable'
+gem 'psych'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

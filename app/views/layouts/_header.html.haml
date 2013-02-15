@@ -22,3 +22,22 @@
             =link_to "Dropdown Link","#"
           %li
             =link_to "Dropdown Link","#"
+      %h1= link_to "Social Resume", root_path
+    %li.divider
+
+  %section
+    %ul.left
+      - if user_signed_in?
+      - else
+        %li=link_to "Features and Pricing", "#"
+        %li=link_to "About Us", "#"
+
+    %ul.right
+      - if user_signed_in?
+        %li= link_to "Profile", "#"
+        %li.divider
+        %li= link_to "Log Out!", destroy_user_session_path, method: :delete
+      - else 
+        %li.divider
+        %li= link_to "Sign-in via Facebook", user_omniauth_authorize_path(:facebook)
+>>>>>>> 080e3e1e5c1247004bd2a01857029ed0b7e042da
