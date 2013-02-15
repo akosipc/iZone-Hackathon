@@ -27,6 +27,7 @@ IZoneHackathon::Application.routes.draw do
   #users controller
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get
+  match '/users/:id/show_applicant' => 'users#show_applicant', as: :show_applicant, via: :get
 
   #analytics controller
   resources :analytics, only: ['index']
