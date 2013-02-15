@@ -20,7 +20,20 @@ class UsersController < ApplicationController
   end
 
   def show_profile
-   @user = current_user 
+    @user = current_user 
+  end
+
+  def show_applicant
+    @user = User.find(params[:id])
+    @graph = Koala::Facebook::GraphAPI.new(@user.access_token)
+    
+    #mutual friends (change this to reflect HR Groups username)
+    #@friends =  @graph.get_connections("me", "mutualfriends/"+current_user.username+"?fields=name,email,username,picture")
+    @friends =  @graph.get_connections("me", "mutualfriends/godstrikerharvey?fields=name,email,username,picture")
+     
+    @friends.each do |friend|
+      @user.mutual_friends.create!(email: friend["email"], name: friend["name"], username: friend["username"], picture: friend["picture"]["data"]["url"])
+    end
   end
 
 end

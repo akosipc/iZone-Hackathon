@@ -7,7 +7,7 @@ IZoneHackathon::Application.routes.draw do
   end
 
   authenticated do
-    root to: 'pages#index'
+    root to: 'pages#search'
   end
 
   root to: 'pages#index'
@@ -19,4 +19,5 @@ IZoneHackathon::Application.routes.draw do
 
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get
+  match '/users/:id/show_applicant' => 'users#show_applicant', as: :show_applicant, via: :get
 end
