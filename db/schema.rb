@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130215103945) do
 
   create_table "applicants", :force => true do |t|
@@ -85,6 +86,15 @@ ActiveRecord::Schema.define(:version => 20130215103945) do
     t.integer  "applicant_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+=======
+ActiveRecord::Schema.define(:version => 20130215095644) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+>>>>>>> 080e3e1e5c1247004bd2a01857029ed0b7e042da
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -121,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130215103945) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "group_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

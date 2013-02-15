@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title><%= yield(:title) %> | SocialCheck </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= google_webfonts_link_tag :vollkorn, :lato => [400] %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
