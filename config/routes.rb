@@ -5,5 +5,10 @@ IZoneHackathon::Application.routes.draw do
     delete 'users/sign_out' => 'devise/sessions#destroy', :as => 'destroy_user_session'
   end
 
+  authenticated do
+    root to: 'pages#search'
+  end
+
   root to: 'pages#index'
+
 end
