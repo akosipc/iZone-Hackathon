@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
 
+  scope :applicants, where(role: 'Applicant')
+
   belongs_to :group
 
   def full_name
