@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     self.update_attributes(:role => 'Admin')
   end
 
+  def set_to_applicant!
+    self.update_attributes(role: 'Applicant')
+  end
+
   def has_a_group?
     self.group.present?
   end

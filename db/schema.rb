@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215112147) do
-
-  create_table "applicants", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "facebook_username"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130215122359) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
