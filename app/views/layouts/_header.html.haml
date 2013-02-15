@@ -1,27 +1,23 @@
-#div
-  %nav.top-bar.fixed
-    %ul
-      %li.name
-        %h1=link_to "SocialResume", root_path
+%nav.top-bar.fixed
+  %ul
+    %li.name
+      %h1=link_to "SocialResume", root_path
+    %li.divider
 
-    %section
-      %ul.left
-        - if user_signed_in?
-        - else
-          %li=link_to "Features and Pricing", features_path
-          %li=link_to "About Us", about_path
+  %section
+    %ul.left
+      - if user_signed_in?
+      - else
+        %li{class: "#{active_page?('features')}"}= link_to "Features", features_path
+        %li{class: "#{active_page?('pricing')}"}= link_to "Pricing", pricing_path
+        %li{class: "#{active_page?('about')}"}= link_to "About Us", about_path
 
-      %ul.right
-        - if user_signed_in?
-          %li= link_to "Profile", profile_path
-          %li.divider
-          %li= link_to "Log Out!", destroy_user_session_path, method: :delete
-        - else 
-          %li.divider
-          %li
-            .facebook-logo
-              = link_to "Sign in", user_omniauth_authorize_path(:facebook)
-        - if user_signed_in?
-          %li
-            .current-user
-              = link_to "Signed in as #{current_user.full_name}"
+    %ul.right
+      - if user_signed_in?
+        %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
+        %li.divider
+        %li= link_to "Log Out!", destroy_user_session_path, method: :delete
+      - else 
+        %li.divider
+        %li= link_to "Sign-in via Facebook", user_omniauth_authorize_path(:facebook)
+

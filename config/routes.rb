@@ -1,5 +1,6 @@
 IZoneHackathon::Application.routes.draw do
   get "applicants/index"
+  resources :facebook_pull
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -14,7 +15,9 @@ IZoneHackathon::Application.routes.draw do
 
   root to: 'pages#index'
   match '/features' => 'pages#features', as: :features, via: :get
+  match '/pricing' => 'pages#pricing', as: :pricing, via: :get
   match '/about' => 'pages#about', as: :about, via: :get
+  match '/thank_you' => 'pages#thank_you', as: :thank_you, via: :get
 
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get

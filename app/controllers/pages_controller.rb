@@ -4,6 +4,10 @@ class PagesController < ApplicationController
 
   def features
   end
+
+  def pricing
+
+  end
   
   def about
   end

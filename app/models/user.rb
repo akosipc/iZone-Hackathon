@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :invitable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
-                  :gender, :username, :avatar_path, :provider, :uid, :role, :group_id
+                  :gender, :username, :avatar_path, :provider, :uid, :role, :group_id, :access_token
 
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
@@ -26,8 +26,16 @@ class User < ActiveRecord::Base
     true if self.role? == "User"
   end
 
+  def is_applicant?
+    true if self.role? == "Applicant"
+  end
+
   def promote!
     self.update_attributes(:role => 'Admin')
+  end
+
+  def set_to_applicant!
+    self.update_attributes(:role => 'Applicant')
   end
 
   def has_a_group?
@@ -46,6 +54,7 @@ class User < ActiveRecord::Base
                       gender:        auth.extra.raw_info.gender.capitalize!,
                       username:      auth.info.nickname,
                       avatar_path:   auth.info.image.gsub('type=square','width=400&height=400'),
+                      access_token:  auth['credentials']['token'],
                       role:          'User')
       user.save
     end
