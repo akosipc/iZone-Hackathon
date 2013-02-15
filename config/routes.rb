@@ -1,14 +1,17 @@
 IZoneHackathon::Application.routes.draw do
-  
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  mount Foundation::Icons::Rails::Engine => '/fi'
+  get "applicants/index"
+  resources :facebook_pull
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  resources :applicants
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }, :skip => [:sessions] do
     delete 'users/sign_out' => 'devise/sessions#destroy', :as => 'destroy_user_session'
   end
 
+  #pages controller
   authenticated do
-    root to: 'pages#index'
+    root to: 'pages#search'
   end
 
   root to: 'pages#index'
@@ -20,4 +23,11 @@ IZoneHackathon::Application.routes.draw do
   match '/invitation' => 'users#invitation', as: :invitation, via: :post
   resources :users, only: ['show', 'edit', 'update']
   match '/invites' => 'users#invites', as: :invites, via: :get
+
+  #users controller
+  resources :users, only: ['show', 'edit', 'update']
+  match '/profile' => 'users#show_profile', as: :profile, via: :get
+
+  #analytics controller
+  resources :analytics, only: ['index']
 end

@@ -30,7 +30,35 @@
   h2 {
     text-shadow: 0px 1px #444;
     font-size: 48px;
+    margin: 10px;
   }//element h2
+
+  .columns {
+    #first .title {
+      background: #32C856;
+      background: -webkit-linear-gradient(top, #32C856 0%, #019625 100%);
+      background: -moz-linear-gradient(top, #32C856 0%, #019625 100%);
+      background: -ms-linear-gradient(top, #32C856 0%, #019625 100%);
+      background: -o-linear-gradient(top, #32C856 0%, #019625 100%);
+      background: linear-gradient(top, #32C856 0%, #019625 100%);
+    }
+    #second .title {
+      background: #21A3E5;
+      background: -webkit-linear-gradient(top, #21A3E5 0%, #0082C4 100%);
+      background: -moz-linear-gradient(top, #21A3E5 0%, #0082C4 100%);
+      background: -ms-linear-gradient(top, #21A3E5 0%, #0082C4 100%);
+      background: -o-linear-gradient(top, #21A3E5 0%, #0082C4 100%);
+      background: linear-gradient(top, #21A3E5 0%, #0082C4 100%);
+    }
+    #third .title {
+      background: #FE6332;
+      background: -webkit-linear-gradient(top, #FE6332 0%, #CC3100 100%);
+      background: -moz-linear-gradient(top, #FE6332 0%, #CC3100 100%);
+      background: -ms-linear-gradient(top, #FE6332 0%, #CC3100 100%);
+      background: -o-linear-gradient(top, #FE6332 0%, #CC3100 100%);
+      background: linear-gradient(top, #FE6332 0%, #CC3100 100%);
+    }
+  }
 
 }//id pricing
 
@@ -38,9 +66,11 @@
   margin: 40px 0px;
 
   h2 {
+
     text-shadow: 0px 1px #444;
     font-size: 48px;
     margin: 10px;
+
   }//element h2
 
   .twelve {
