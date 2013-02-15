@@ -2,7 +2,7 @@
   .eight.columns.offset-by-two
     .th
       .vertical-align2
-        .panel.callout.radius
+        .panel.radius
           .td
             .right
               %h4 Total number of invites:
@@ -15,6 +15,7 @@
                 Email:
                 = @user.email
               %h6 
+                Gender:
                 = @user.gender
             %h4
               = @user.full_name
