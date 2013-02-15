@@ -6,9 +6,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
     if @user.eql? current_user
-      redirect_to profile_path
+      redirect_to invites_path
     end
-    @gago = pull_facebook_data(@user)
 
   end
 
@@ -35,5 +34,31 @@ class UsersController < ApplicationController
       @user.mutual_friends.create!(email: friend["email"], name: friend["name"], username: friend["username"], picture: friend["picture"]["data"]["url"])
     end
   end
+  
+  def invites
+    @applicant = User.new
+  end
 
+  def invitation
+      @user = User.where(:email => params[:email])
+      if not_email_domain(params[:email])
+        flash[:notice] = "Sorry, your invitation was not sent successfully."
+        redirect_to '/invites'
+      else
+        if @user.any?
+          flash[:notice] = "Sorry, your invitation was not sent successfully." 
+          redirect_to '/invites'
+        else
+          @applicant = User.invite!(email: params[:email])
+          @user = User.last
+          @user.destroy
+          flash[:notice] = "Congratulations, your invitation was successfuly sent.."
+          redirect_to '/invites'
+        end
+      end
+  end
+
+  def not_email_domain(email_address)
+    !(email_address =~ /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i )
+  end
 end
