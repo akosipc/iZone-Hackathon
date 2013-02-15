@@ -1,5 +1,5 @@
 class MutualFriend < ActiveRecord::Base
-  attr_accessible :email, :name, :username, :applicant_id
+  attr_accessible :email, :name, :username, :user_id
 
-  belongs_to :applicant
+  belongs_to :user
 end

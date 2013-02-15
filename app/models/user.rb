@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :role, :gender, :username
   validates_uniqueness_of :username
 
+  has_many :events
+  has_many :friends
+  has_many :groups
+  has_many :images
+  has_many :informations
+  has_many :likes
+  has_many :mutual_friends
+  has_many :works
   scope :applicants, where(role: 'Applicant')
 
   belongs_to :group
@@ -55,7 +63,7 @@ class User < ActiveRecord::Base
                       last_name:     auth.extra.raw_info.last_name,
                       gender:        auth.extra.raw_info.gender.capitalize!,
                       username:      auth.info.nickname,
-                      avatar_path:   auth.info.image.gsub('type=square','width=400&height=400'),
+                      avatar_path:   auth.info.image.gsub('type=square','width=200&height=200'),
                       access_token:  auth['credentials']['token'],
                       role:          'User')
       user.save
