@@ -1,5 +1,6 @@
 IZoneHackathon::Application.routes.draw do
   get "applicants/index"
+  resources :facebook_pull
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
