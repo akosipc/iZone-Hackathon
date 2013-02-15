@@ -4,29 +4,29 @@
   .row
     %h2.centerify Pay-As-You-Need-It Basis
     .twelve.columns
-      .four.columns
+      .three.columns#first
         %ul.pricing-table
-          %li.title
-          %li.price
-          %li.description
-          %li.bullet-item
-          %li.bullet-item
+          %li.title Free
+          %li.price $0.00
+          %li.bullet-item 100 applicants limit
+          %li.bullet-item 1 team member
           %li.cta-button
-      .four.columns
+            = link_to 'Try it now', '#', class: 'button'
+      .six.columns#second
         %ul.pricing-table
-          %li.title
-          %li.price
-          %li.description
-          %li.bullet-item
-          %li.bullet-item
+          %li.title Basic
+          %li.price $4.99
+          %li.bullet-item 500 applicants limit
+          %li.bullet-item 10 team members
           %li.cta-button
-      .four.columns
+            = link_to 'Buy it now! >>', '#', class: 'button'
+      .three.columns#third
         %ul.pricing-table
-          %li.title
-          %li.price
-          %li.description
-          %li.bullet-item
-          %li.bullet-item
+          %li.title Professional
+          %li.price $9.99
+          %li.bullet-item 1000 applicants limit
+          %li.bullet-item 25 team members
           %li.cta-button
+            = link_to 'Buy it now! >>', '#', class: 'button'
 
 
