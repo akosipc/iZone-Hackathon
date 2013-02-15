@@ -4,7 +4,7 @@ class CreateGroups < ActiveRecord::Migration
       t.string :name
       t.string :link
       t.text :description
-      t.integer :applicant_id
+      t.integer :user_id
       t.timestamps
     end
   end

@@ -1,2 +1,0 @@
-module FacebookPullHelper
-end

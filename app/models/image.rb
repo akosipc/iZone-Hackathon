@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :link, :applicant_id
+  attr_accessible :link, :user_id
   
-  belongs_to :applicant
+  belongs_to :user 
 end
