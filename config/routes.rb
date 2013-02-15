@@ -18,6 +18,7 @@ IZoneHackathon::Application.routes.draw do
   match '/pricing' => 'pages#pricing', as: :pricing, via: :get
   match '/about' => 'pages#about', as: :about, via: :get
   match '/thank_you' => 'pages#thank_you', as: :thank_you, via: :get
+  match '/filter' => 'pages#filter', as: :filter, via: :post
 
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get

@@ -11,4 +11,12 @@ class PagesController < ApplicationController
   
   def about
   end
+
+  def search
+  end
+
+  def filter
+    @applicants = nil
+    render 'search'
+  end
 end
