@@ -109,5 +109,14 @@
 }//id search
 
 #socialResume:hover{
-	opacity: 0.7;
+	opacity: 0.8;
+}
+
+.footer-buttons{
+    text-align: center;
+    text-decoration: underline;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
 }

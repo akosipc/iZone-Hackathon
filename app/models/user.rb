@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
                       last_name:     auth.extra.raw_info.last_name,
                       gender:        auth.extra.raw_info.gender.capitalize!,
                       username:      auth.info.nickname,
-                      avatar_path:   auth.info.image.gsub('type=square','width=400&height=400'),
+                      avatar_path:   auth.info.image.gsub('type=square','width=200&height=200'),
                       access_token:  auth['credentials']['token'],
                       role:          'User')
       user.save
