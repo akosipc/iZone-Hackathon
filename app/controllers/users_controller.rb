@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     update!(notice: 'User information successfully updated!') { redirect_to profile_path }
   end
 
+  def show_profile
+    @user = current_user
+  end
+
   def invites
     @applicant = User.new
   end
@@ -35,6 +39,8 @@ class UsersController < ApplicationController
           @applicant = User.invite!(email: params[:email])
           @user = User.last
           @user.destroy
+          current_user.invitation_count += 1
+          current_user.save 
           flash[:notice] = "Congratulations, your invitation was successfuly sent.."
           redirect_to '/invites'
         end
