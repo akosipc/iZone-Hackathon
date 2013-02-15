@@ -1,5 +1,5 @@
 if Rails.env.production?
-  app_id = '565290946829952'
+  app_id = '460502313985913'
 else
   app_id = "493848090644965"
 end
