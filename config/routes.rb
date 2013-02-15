@@ -3,6 +3,7 @@ IZoneHackathon::Application.routes.draw do
   resources :facebook_pull
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  mount Foundation::Icons::Rails::Engine => '/fi'
 
   resources :applicants
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }, :skip => [:sessions] do
