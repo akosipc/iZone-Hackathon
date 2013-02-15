@@ -1,9 +1,11 @@
 %footer.row
   .twelve.columns
     .row
-      .six.columns
+      .two.columns
         %p &copy; Apptivate.
-      .six.columns
+      .ten.columns
         %ul.link-list.right
           %li= link_to "Features and Pricing", features_path
+          %li
+            %a{:href => "javascript:UserVoice.showPopupWidget();"} Feedback
           %li= link_to "About Us", about_path
