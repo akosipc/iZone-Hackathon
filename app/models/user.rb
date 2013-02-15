@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :invitable
+         :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
                   :gender, :username, :avatar_path, :provider, :uid, :role, :group_id, :access_token
@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
 
   def promote!
     self.update_attributes(:role => 'Admin')
+  end
+
+  def set_to_applicant!
+    self.update_attributes(:role => 'Applicant')
   end
 
   def has_a_group?

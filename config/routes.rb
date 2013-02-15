@@ -15,6 +15,7 @@ IZoneHackathon::Application.routes.draw do
   root to: 'pages#index'
   match '/features' => 'pages#features', as: :features, via: :get
   match '/about' => 'pages#about', as: :about, via: :get
+  match '/thank_you' => 'pages#thank_you', as: :thank_you, via: :get
 
   resources :users, only: ['show', 'edit', 'update']
   match '/profile' => 'users#show_profile', as: :profile, via: :get
