@@ -1,3 +1,22 @@
 - provide :title, 'Analytics'
 
+#analytics
+  .row
+    .twelve.columns
+      - @applicants.each do |applicant|
+        = link_to show_applicant_path(applicant) do
+          .panel
+            .two.columns
+              = image_tag applicant.avatar_path
+            .eight.columns
+              %h3= applicant.full_name
+              %h6= applicant.email
+              %span= "Mutual Friends: "
+              .success.round.label= applicant.mutual_friends.count.to_s
+              %span= "Groups: "
+              .success.round.label= applicant.groups.count.to_s
+              %span= "Likes: "
+              .success.round.label= applicant.likes.count.to_s
+            .clearfix
+
 
