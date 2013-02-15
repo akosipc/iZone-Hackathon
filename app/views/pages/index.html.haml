@@ -6,7 +6,8 @@
     .inline.resume-span
       = "Resumé"
   %h4.subheader= "Lorem ipsum sit amet dolor consecitur"
-  = image_tag('facebook-button.png')
+  = link_to user_omniauth_authorize_path(:facebook) do
+    = image_tag('facebook-button.png')
   .centerify.separator
 = render 'features'
 = render 'about'
