@@ -13,3 +13,12 @@
  *= require jackedup
  *= require_tree .
  */
+
+
+body {
+  font-family: 'Lato', Helvetica, Arial, sans-serif !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Vollkorn', Times New Roman, serif !important;
+}
