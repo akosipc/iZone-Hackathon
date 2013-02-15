@@ -10,6 +10,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else
         @user.set_to_applicant!
+        pull_facebook_data(@user)
         redirect_to thank_you_path, notice: 'Thank you for submitting your data!'
       end
     else
@@ -17,4 +18,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to root_path
     end
   end
+
 end

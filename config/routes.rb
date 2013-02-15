@@ -7,7 +7,7 @@ IZoneHackathon::Application.routes.draw do
   end
 
   authenticated do
-    root to: 'pages#search'
+    root to: 'pages#index'
   end
 
   root to: 'pages#index'
