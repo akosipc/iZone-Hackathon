@@ -12,6 +12,7 @@ IZoneHackathon::Application.routes.draw do
 
   root to: 'pages#index'
   match '/features' => 'pages#features', as: :features, via: :get
+  match '/pricing' => 'pages#pricing', as: :pricing, via: :get
   match '/about' => 'pages#about', as: :about, via: :get
   match '/thank_you' => 'pages#thank_you', as: :thank_you, via: :get
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | SocialCheck </title>
+  <title><%= yield(:title) %> | SocialResume </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= google_webfonts_link_tag :vollkorn, :lato => [400] %>
   <%= javascript_include_tag "application" %>
@@ -10,11 +10,9 @@
 <body>
 <%= render 'layouts/header' %>
 <%= render 'layouts/messages' %>
-<div class = "wrapper-heading">
-  <%= yield %>
-</div>
+<%= yield %>
 <div class = "wrapper-footer">
-	<%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
 </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :invitable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
                   :gender, :username, :avatar_path, :provider, :uid, :role, :group_id, :access_token
@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
 
   def is_user?
     true if self.role? == "User"
+  end
+
+  def is_applicant?
+    true if self.role? == "Applicant"
   end
 
   def promote!
