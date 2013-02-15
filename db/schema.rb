@@ -17,34 +17,34 @@ ActiveRecord::Schema.define(:version => 20130215124045) do
     t.string   "name"
     t.string   "time"
     t.text     "place"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "friends", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "username"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "link"
     t.text     "description"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "images", :force => true do |t|
     t.string   "link"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "information", :force => true do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130215124045) do
     t.string   "relationship_status"
     t.string   "address"
     t.string   "contact_no"
-    t.integer  "applicant_id"
+    t.integer  "user_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
@@ -65,18 +65,18 @@ ActiveRecord::Schema.define(:version => 20130215124045) do
     t.string   "name"
     t.string   "link"
     t.string   "category"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "mutual_friends", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "username"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -138,9 +138,9 @@ ActiveRecord::Schema.define(:version => 20130215124045) do
   create_table "works", :force => true do |t|
     t.string   "name"
     t.string   "position"
-    t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -3,7 +3,7 @@ class CreateWorks < ActiveRecord::Migration
     create_table :works do |t|
       t.string :name
       t.string :position
-      t.integer :applicant_id
+      t.integer :user_id
       t.timestamps
     end
   end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  
+  before_filter :authenticate_user!,:except => [:applicant]
   inherit_resources
 
   def show
@@ -21,3 +22,4 @@ class UsersController < ApplicationController
   end
 
 end
+
