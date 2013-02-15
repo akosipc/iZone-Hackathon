@@ -242,3 +242,27 @@
 // http://www.modularscale.com by Tim Brown
 // https://github.com/scottkellum/modular-scale by scottkellum
 @import 'foundation';
+
+.crop {
+  height:150px;
+  overflow:hidden;}
+
+.float {
+  height:125px;
+  overflow:hidden;
+  img {float:left;}
+}
+
+.tiny.button{
+  font-size:8px;
+}
+
+.like{
+  height:150px;
+  .like-content{
+    height:65px;
+    overflow:hidden;
+  }
+}
+
+.clearfix{margin-bottom:100px;}
