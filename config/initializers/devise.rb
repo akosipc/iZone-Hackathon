@@ -239,8 +239,8 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
   require 'omniauth-facebook'
   if Rails.env.production?
-    config.omniauth :facebook, '565290946829952', '3968915f87bbe720bb34ec0931fea0df'
+    config.omniauth :facebook, "460502313985913", "7290646527d5c54ae95749c9890bbe37"
   else
-    config.omniauth :facebook, "493848090644965","86493671595bd39b166d3c36d7afb987"
+    config.omniauth :facebook, "493848090644965", "86493671595bd39b166d3c36d7afb987"
   end
 end
