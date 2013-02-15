@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     if @user.eql? current_user
       redirect_to profile_path
     end
+    @gago = pull_facebook_data(@user)
+
   end
 
   def edit
@@ -22,4 +24,3 @@ class UsersController < ApplicationController
   end
 
 end
-

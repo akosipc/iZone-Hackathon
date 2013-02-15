@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215124045) do
+ActiveRecord::Schema.define(:version => 20130215173745) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(:version => 20130215124045) do
     t.string   "link"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "bookmard_order"
   end
 
   create_table "images", :force => true do |t|

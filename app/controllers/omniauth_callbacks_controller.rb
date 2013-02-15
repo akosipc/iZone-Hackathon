@@ -19,4 +19,59 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+def pull_facebook_data(user)
+    @applicant = User.find(user.id)
+    @graph = Koala::Facebook::GraphAPI.new(@applicant.access_token)
+
+    @profile, @friends, @likes, @photos,@groups,@events =  @graph.batch do |batch_api|
+      #personal details
+      batch_api.get_object("me")
+
+      #mutual friends (change this to reflect HR Groups username)
+      batch_api.get_connections("me", "mutualfriends/ace.dimasuhid?fields=name,email,username")
+
+      #user likes
+      batch_api.get_connections("me","likes?fields=category,link,name")
+
+      #user posts
+      batch_api.get_connections("me","photos?fields=link&limit=5")
+
+      #user groups
+      batch_api.get_connections("me","groups?fields=description,name,link,bookmark_order")
+
+      #user events
+      batch_api.get_connections("me","events")
+    end
+
+
+     @events.each do |event|
+       user.events.create!(name: event["name"], place: event["location"], time: event["start_time"])
+     end
+       #user.friends.create!(name: "", email: "", username: "")
+     @groups.each do |group|
+       user.groups.create!(name: group["name"], description: group["description"], link: group["link"], bookmark_order: group["bookmark_order"])
+     end
+
+     @photos.each do |image|
+       user.images.create!(link: image["link"])
+     end 
+     
+     user.informations.create!(address: @profile["hometown"]["name"],birthday: @profile["birthday"], email: @profile["email"], gender: @profile["gender"], relationship_status: @profile["relationship_status"])
+     
+     @likes.each do |like|
+       user.likes.create!(category: like["category"], link: like["link"], name: like["name"])
+     end
+     
+     @friends.each do |friend|
+       user.mutual_friends.create!(email: friend["email"], name: friend["name"], username: friend["username"])
+     end
+     
+     @profile["work"].each do |work|
+       if work["position"]["name"] == nil
+         user.works.create!(name: work["employer"]["name"], position: "")
+       else
+         user.works.create!(name: work["employer"]["name"], position: work["position"]["name"])
+       end
+      end
+  end
 end
