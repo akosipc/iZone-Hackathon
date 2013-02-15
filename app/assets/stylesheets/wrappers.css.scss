@@ -1,27 +1,18 @@
-.wrapper-heading{
-  background: rgba(2, 40, 89, 1);
-  border-top: 30px solid transparent;
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 10px 10px 5px #888;
-}
-
-.lining{
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 10px 10px 5px #888;
-}
-
-.wrapper-search{
-  background: rgba(53, 135, 242, 1);
-}
-
-.wrapper-featured{
-  background: rgba(215, 230, 233, 1);
-}
-
 .wrapper-footer{
-  background: rgba(242, 192, 43, 1);  
+  background: url('paper_fibers.png') 0 0 repeat;
+  border-top: 1px solid rgba(132, 132, 132, 0.6);
+}
+
+
+body{
+  background: #1e69de;
+  background: -moz-linear-gradient(top, #1e69de 0%, #37bdf2 35%, #d7e6e9 75%, #d7e6e9 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e69de), color-stop(35%,#37bdf2), color-stop(75%,#d7e6e9), color-stop(100%,#d7e6e9));
+  background: -webkit-linear-gradient(top, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
+  background: -o-linear-gradient(top, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
+  background: -ms-linear-gradient(top, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
+  background: linear-gradient(to bottom, #1e69de 0%,#37bdf2 35%,#d7e6e9 75%,#d7e6e9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e69de', endColorstr='#d7e6e9',GradientType=0 );
 }
 
 .top-bar{

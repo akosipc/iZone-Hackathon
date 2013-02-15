@@ -1,4 +1,4 @@
-.wrapper-heading
+#div
   %nav.top-bar.fixed
     %ul
       %li.name
@@ -24,4 +24,4 @@
         - if user_signed_in?
           %li
             .current-user
-              = link_to "Signed in as #{current_user.full_name}", 
+              = link_to "Signed in as #{current_user.full_name}"
