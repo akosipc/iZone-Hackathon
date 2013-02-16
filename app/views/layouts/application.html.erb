@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | SocialResume </title>
+  <title><%= yield(:title) %> SocialResumé </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= google_webfonts_link_tag :vollkorn, :lato => [400] %>
   <%= javascript_include_tag "application" %>
@@ -24,4 +24,13 @@
   })();
 </script>
 </body>
+<script>
+  $(document).ready(function(){
+    $("body")[0].scrollTop = 0;
+    $("#nav li a").click(function(e){
+      e.preventDefault();
+      $("body")[0].scrollTop = $('' + $(this).attr('data-url')).position().top - 50;
+    })
+  })
+</script>
 </html>

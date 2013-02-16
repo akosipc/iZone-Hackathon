@@ -73,6 +73,11 @@
 
   }//element h2
 
+  p {
+    text-align: justify;
+    text-justify: newspaper;
+  }
+
   .twelve {
 
     background: rgba(186, 234, 234, 0.8);
@@ -141,6 +146,11 @@
   }//element form
 
 }//id search
+
+#about-us {
+  height: 10%;
+}
+
 
 #socialResume:hover{
 	opacity: 0.8;

@@ -6,12 +6,12 @@
     %li.divider
 
   %section
-    %ul.left
+    %ul.left#nav
       - if user_signed_in?
       - else
-        %li= link_to "Features", '#'
-        %li= link_to "Pricing", '#'
-        %li= link_to "About Us", '#'
+        %li= link_to "Features", '#', :'data-url' => '#features'
+        %li= link_to "Pricing", '#', :'data-url' => '#pricing'
+        %li= link_to "About Us", '#', :'data-url' => '#about-us'
 
     %ul.right
       - if user_signed_in?
