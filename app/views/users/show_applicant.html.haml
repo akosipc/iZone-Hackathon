@@ -18,10 +18,10 @@
     .twelve.columns
       - @user.images.each do |image|
         .three.mobile-two.columns
-          = image_tag image.link
+          .crop
+            = image_tag image.link
           .panel
             %p Sample Images
-      .clearfix
 
 - if @user.events.present?
   .row
@@ -37,39 +37,44 @@
 -if @user.mutual_friends.present?
   .row
     .twelve.columns
-      %h2 Mutual Friends
+      %h2 
+        Find Some Recommendations for 
+        = @user.first_name
+        = @user.last_name
       - @user.mutual_friends.each do |friend|
-        .three.columns.panel
+        .two.columns.panel.float
           =image_tag friend.picture
-          %h3 
-            =friend.name
           %p
+            = link_to "Ask me!", "http://facebook.com/#{friend.username}", class: "tiny button"
+          %h5
             =friend.name
-            =friend.username
-            = link_to "Inquire about applicant", "#", class: "small button"
 
 -if @user.groups.present?
   .row
     .twelve.columns
-      %h2 Groups
+      %h2 Commonly Used Groups
       - @user.groups.each do |group|
-        .twelve.columns.panel
-          %h3
-            =group.name
-          %p
-            = group.description
-            Frequency of use
-            = group.bookmard_order
-          = link_to "Checkout Group", group.link, class: "small button"
+        - if group.bookmard_order < 999999999
+          .twelve.columns.panel
+            %h3
+              =group.name
+            %p
+              = group.description
+              Frequency of use: 
+              %span.success.label
+                = group.bookmard_order
+            = link_to "Checkout Group", group.link, class: "small button"
   
 -if @user.likes.present?
   .row
     .twelve.columns
       %h2 Likes
       - @user.likes.each do |like|
-        .twelve.columns.panel
-          %h3
-            =like.name
-          %p
-            = like.category
-          = link_to "Checkout Like", like.link, class: "small button"
+        .two.columns.panel.like
+          .like-content
+            %h5
+              =like.name
+            %p
+              = like.category
+          = link_to "Checkout Like", like.link, class: "tiny button"
+.clearfix

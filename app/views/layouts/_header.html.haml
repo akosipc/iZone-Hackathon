@@ -6,16 +6,16 @@
     %li.divider
 
   %section
-    %ul.left
+    %ul.left#nav
       - if user_signed_in?
       - else
-        %li= link_to "Features", '#'
-        %li= link_to "Pricing", '#'
-        %li= link_to "About Us", '#'
+        %li= link_to "Features", '#', :'data-url' => '#features'
+        %li= link_to "Pricing", '#', :'data-url' => '#pricing'
+        %li= link_to "About Us", '#', :'data-url' => '#about-us'
 
     %ul.right
       - if user_signed_in?
-        %li{class: "#{active_page?('invitations')}"}= link_to "Invitations", invites_path
+        %li{class: "#{active_page?('invitations')}"}= link_to "Applications", invites_path
         %li{class: "#{active_page?}"}= link_to "Search", root_path
         %li{class: "#{active_page?('analytics')}"}= link_to "Analytics", analytics_path
         %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
