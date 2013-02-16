@@ -3,12 +3,10 @@
 .v-spacer60
 .centerify
   .social-resume
-    = "Social"
-    .inline.resume-span
-      = "Resumé"
+    = "Seeker"
   %h4.subheader{:style => "color: white;"}= "Helping You To Hire Socially"
   = link_to user_omniauth_authorize_path(:facebook) do
-    = image_tag('facebook-button.png', :class => "facebook-signin")
+    = image_tag('facebook-button.png', :style => "position: relative; top: -12px;")
   .centerify.separator
 = render 'features'
 .pricing-wrapper
