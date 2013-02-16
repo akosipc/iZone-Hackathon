@@ -3,18 +3,15 @@
     .row
       .three.columns
         .inline
-          &copy; Apptivate.
+          %a{:href => "http//www.apptivate.co", :target => '_blank'} &copy; Apptivate
+      .six.columns
+        %center
           %span.glyph.social= link_to "d", 'https://www.facebook.com/pages/Social-Resume/546800158685356?fref=ts', :target => '_blank', :title => "Like us on Facebook!"
           %span.glyph.social= link_to "e", 'https://twitter.com/SocialResumePH', :target => '_blank', :title => "Follow us on Twitter!"
-      .nine.columns
+      .three.columns
         %ul.link-list.right
-          %li= link_to "Features", features_path
-          %li= link_to "Pricing", pricing_path
           %li
             %a{:href => "javascript:UserVoice.showPopupWidget();"} Feedback
-          %li= link_to "About Us", about_path
-
-
 
 :javascript
   
