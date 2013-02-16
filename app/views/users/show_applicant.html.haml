@@ -25,18 +25,18 @@
       %h1
         Search Filter
       .right
-        = check_box_tag "events_cb"
+        = check_box_tag "events_cb", 1, true
         Events
-      = check_box_tag "photos_cb"
+      = check_box_tag "photos_cb", 1, true
       Photos
       %br
-      = check_box_tag "mutual_friends_cb"
+      = check_box_tag "mutual_friends_cb", 1, true
       Mutual Friends / 2nd Degree
       %br
-      = check_box_tag "groups_cb"
+      = check_box_tag "groups_cb", 1, true
       Groups
       %br
-      = check_box_tag "likes_cb"
+      = check_box_tag "likes_cb", 1, true
       Likes
 - if @user.images.present?
   #photos

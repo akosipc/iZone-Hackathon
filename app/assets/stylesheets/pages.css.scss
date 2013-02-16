@@ -173,13 +173,21 @@
 .emboss {
    text-shadow:
       0 1px 0 rgba(0, 0, 0, 0.8), /* shadow */
-      0 -1px 0 rgba(255, 255, 255, 1.0); /* highlight */ 
+      0 -1px 0 rgba(255, 255, 255, 1.0); /* highlight */
+  position: relative;
+  top: 210px;
+  height: 200px;
+  padding: 25px;
   }
 
 .impress {
    text-shadow:
       0 -1px 0 rgba(0, 0, 0, 0.8), /* shadow */
       0 1px 0 rgba(255, 255, 255, 0.5); /* highlight */ 
+  position: relative;
+  top: 210px;
+  height: 200px;
+  padding: 25px;
   }
 
 .separator{
@@ -228,3 +236,24 @@
 }
 
 .clearfix { clear: both; }
+
+.submitting-application{
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    position: relative;
+    letter-spacing: 0.5pt;
+    word-spacing: -1.3pt;
+    color: #4237F2;
+    font-weight: bold;
+    text-shadow: 0px 0px 0px rgba(0,0,234,1);
+}
+
+.thank-you{
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 100px;
+  letter-spacing: 0.7pt;
+  word-spacing: -1.3pt;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
