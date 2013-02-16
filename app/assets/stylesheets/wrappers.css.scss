@@ -54,6 +54,7 @@ hr {
   letter-spacing: 0.7pt;
   word-spacing: -1.3pt;
   text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  opacity: 1;
 }
 
 .resume-span{
@@ -66,4 +67,17 @@ hr {
   background: rgba(242, 182, 77, 0.9);
   border-top: 5px solid rgba(242, 133, 43, 0.7);
   border-bottom: 5px solid rgba(242, 133, 43, 0.7);
+}
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.social-plugins{
+position: relative;
+bottom-padding: 2px;
 }

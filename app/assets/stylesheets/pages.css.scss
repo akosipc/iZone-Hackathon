@@ -190,6 +190,8 @@
   width:60%;
   height:10px;
   border-top: 5px dotted rgba(255,255,255,0.3);
+  position: relative;
+  top: 15px;
 }
 
 .vertical-sep{
@@ -252,4 +254,16 @@
   letter-spacing: 0.7pt;
   word-spacing: -1.3pt;
   text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.facebook-signin{
+  position: relative;
+  top: -12px;
+  opacity: 0.9;
+}
+
+.facebook-signin:hover{
+  position: relative;
+  top: -12px;
+  opacity: 1;
 }
