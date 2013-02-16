@@ -5,12 +5,12 @@
     = "Social"
     .inline.resume-span
       = "Resumé"
-  %h4.subheader= "Lorem ipsum sit amet dolor consecitur"
+  %h4.subheader Helping You To Hire Socially    
   = link_to user_omniauth_authorize_path(:facebook) do
     = image_tag('facebook-button.png')
   .centerify.separator
 = render 'features'
-= render 'about'
 .pricing-wrapper
   = render 'pricing'
+= render 'about'
 .v-spacer150

@@ -24,4 +24,13 @@
   })();
 </script>
 </body>
+<script>
+  $(document).ready(function(){
+    $("body")[0].scrollTop = 0;
+    $("#nav li a").click(function(e){
+      e.preventDefault();
+      $("body")[0].scrollTop = $('' + $(this).attr('data-url')).position().top - 50;
+    })
+  })
+</script>
 </html>
