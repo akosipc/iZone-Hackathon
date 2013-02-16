@@ -50,16 +50,22 @@
               %p Sample Images
 
 - if @user.events.present?
-  #groups
+  #events
     .row
       .twelve.columns
+        %h2 User Events
         - @user.events.each do |event|
-          .two.columns.mobile-one
-            %h3 event.name
-          .five.columns
-            %p event.place
-          .five.columns
-            %p event.time
+          .panel
+            .two.columns
+              %h4
+                = event.name
+            .five.columns
+              %p 
+                = event.place
+            .five.columns
+              %p 
+                = event.time
+            .clearfix
 
 -if @user.mutual_friends.present?
   #mutual_friends
