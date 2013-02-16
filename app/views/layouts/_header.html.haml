@@ -5,24 +5,25 @@
         %h1=link_to "SocialResume", root_path
     %li.divider
 
-  %section
-    %ul.left#nav
-      - if user_signed_in?
-      - else
-        %li= link_to "Features", '#', :'data-url' => '#features'
-        %li= link_to "Pricing", '#', :'data-url' => '#pricing'
-        %li= link_to "About Us", '#', :'data-url' => '#about-us'
+  - unless controller.controller_name.eql? 'pages' and controller.action_name.eql? 'thank_you'
+    %section
+      %ul.left#nav
+        - if user_signed_in?
+        - else
+          %li= link_to "Features", '#', :'data-url' => '#features'
+          %li= link_to "Pricing", '#', :'data-url' => '#pricing'
+          %li= link_to "About Us", '#', :'data-url' => '#about-us'
 
-    %ul.right
-      - if user_signed_in?
-        %li{class: "#{active_page?('invitations')}"}= link_to "Applications", invites_path
-        %li{class: "#{active_page?}"}= link_to "Search", root_path
-        %li{class: "#{active_page?('analytics')}"}= link_to "Analytics", analytics_path
-        %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
-        %li.divider
-        %li= link_to "Log Out!", destroy_user_session_path, method: :delete
-      - else
-        %li{:style => "pointer-events: none; padding-right: 5px; color: white;"}= "Already have an account?"
-        %li.divider
-        %li= link_to "Login", user_omniauth_authorize_path(:facebook)
+      %ul.right
+        - if user_signed_in?
+          %li{class: "#{active_page?('invitations')}"}= link_to "Applications", invites_path
+          %li{class: "#{active_page?}"}= link_to "Search", root_path
+          %li{class: "#{active_page?('analytics')}"}= link_to "Analytics", analytics_path
+          %li{class: "#{active_page?('profile')}"}= link_to "Profile", profile_path
+          %li.divider
+          %li= link_to "Log Out!", destroy_user_session_path, method: :delete
+        - else
+          %li{:style => "pointer-events: none; padding-right: 5px; color: white;"}= "Already have an account?"
+          %li.divider
+          %li= link_to "Login", user_omniauth_authorize_path(:facebook)
 
