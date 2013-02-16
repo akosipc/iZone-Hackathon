@@ -14,7 +14,7 @@
           .four.columns
             .centerify
               = link_to  show_applicant_path(applicant) do
-                .panel
+                .panel.search-box
                   = image_tag applicant.avatar_path
                   %h4= applicant.full_name
     :javascript
